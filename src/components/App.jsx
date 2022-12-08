@@ -7,6 +7,8 @@ import { Filter } from './ContactFilter/Filter';
 import { ContactList } from './ContactList&Items/FriendsList';
 import { Box } from './Box';
 
+const LOKAL_KEY = 'my-contacts';
+
 export class App extends Component {
   state = {
     contacts: [
@@ -17,6 +19,21 @@ export class App extends Component {
     ],
     filter: '',
   };
+
+componentDidMount() {
+    const friends = JSON.parse(localStorage.getItem(LOKAL_KEY));
+
+    if (friends) {
+      this.setState(prev => ({
+        contacts: friends,
+      }));
+    }
+  }
+    componentDidUpdate(_, prevState) {
+    if (prevState.contact !== this.state.contacts) {
+      localStorage.setItem(LOKAL_KEY, JSON.stringify(this.state.contacts));
+    }
+  }
 
   onConfirmAddFriend = ({ name, number }, { resetForm }) => {
     const friendId = nanoid();
@@ -71,8 +88,3 @@ export class App extends Component {
   }
 }
 
-
-// 11
-// 12
-// 15
-// 3
