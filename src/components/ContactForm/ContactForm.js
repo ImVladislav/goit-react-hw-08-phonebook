@@ -4,7 +4,7 @@ import { Formik, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Box } from 'components/Box';
 import { FormTitle } from './Title';
-import { Button } from './Button';
+import { Button } from 'components/Button/Button';
 import { Error, Input } from './SearchInput.Styled'
 
 const initialValues = {

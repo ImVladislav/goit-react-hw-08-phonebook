@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
@@ -9,7 +8,9 @@ export const StyledButton = styled.button`
   font-size: ${p => p.theme.fontSizes.m}px;
   display: block;
   cursor: pointer;
+
   transition: all 250ms linear;
+
   :hover {
     background-color: ${p => p.theme.colors.secondary};
   }
