@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { SearchInput } from 'components/ContactForm/SearchInput.Styled';
+import { SearchInput } from 'components/ContactForm/SearchInput.styled';
 import { FormTitle } from 'components/ContactForm/Title';
 
 export const Filter = ({ value, onFilterChange }) => {
