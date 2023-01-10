@@ -7,6 +7,7 @@ export const Filter = () => {
   const value = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
+  
   return (
     <FormTitle title="Find contacts by name">
       <SearchInput
