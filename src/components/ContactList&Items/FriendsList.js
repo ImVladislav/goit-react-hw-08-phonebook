@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+
 import { StyledList } from './FriendsList.styled';
 import { FriendItem } from './FriendsItem';
 import { Button } from 'components/Button/Button';
