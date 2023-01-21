@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperations';
-import { Layout } from './Layout';
+import { Layout } from './layout';
 import { Contacts } from './Pages/Contacts';
 import { WelcomePage } from './Pages/HomePage';
 import { Login } from './Pages/LoginPage';
