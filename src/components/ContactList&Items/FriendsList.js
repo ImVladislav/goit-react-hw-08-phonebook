@@ -1,12 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-
-import { StyledList } from './FriendsList.styled';
 import { FriendItem } from './FriendsItem';
-import { Button } from 'components/Button/Button';
-import { FriendDescription } from './FriendsItem.styled';
-import { fetchContacts, deleteContact } from 'redux/contactsOperations';
+import { fetchContacts } from 'redux/contacts/contactsOperations';
 import { useEffect } from 'react';
-import { onDeleteContact } from 'utils/notify';
+import { Box } from '@mui/material';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -23,22 +19,13 @@ export const ContactList = () => {
   );
 
   return (
-    <StyledList>
-      {filteredContacts.map(({ id, name, phone }) => (
-        <FriendItem key={id}>
-          <FriendDescription>
-            {name}: {phone}
-          </FriendDescription>
-          <Button
-            type="button"
-            onClick={() => {
-              onDeleteContact(name);
-              dispatch(deleteContact(id));
-            }}
-            text="Delete"
-          />
-        </FriendItem>
+    <Box
+      as="ul"
+      sx={{ display: 'flex', flexDirection: 'column', gap: 1, mt: 2 }}
+    >
+      {filteredContacts.map(({ id, name, number }) => (
+        <FriendItem key={id} id={id} name={name} number={number} />
       ))}
-    </StyledList>
+    </Box>
   );
 };
